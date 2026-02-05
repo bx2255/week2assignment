@@ -1,0 +1,97 @@
+/* style.css */
+
+body {
+  background-image: url("./background.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: #e5e5e5;
+  font-family: "IBM Plex Sans", Arial, sans-serif;
+  margin: 0;
+}
+
+.header {
+  text-align: center;
+  border-bottom: 2px solid #444;
+  padding: 40px;
+}
+
+.subtitle {
+  letter-spacing: 2px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+h1 {
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+  letter-spacing: 0.12em;   /* 修正：不要用逗号 */
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+
+h2 {
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  margin: 0 0 18px 0;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.section {
+  border: 2px solid #444;
+  margin: 80px auto;
+  padding: 40px;
+  width: 80%;
+  position: relative;
+}
+
+/* 图文并排容器 */
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+
+  /* 关键：屏幕不够宽时，文字掉下去，图片不被挤小 */
+  flex-wrap: wrap;
+}
+
+/* 图片：保持你原来的“不要变小”的规则 */
+.row img {
+  width: 65%;
+  max-width: 560px;
+  height: auto;
+
+  display: block;
+  border: 1px solid #333;
+
+  flex-shrink: 0;   /* 关键：不允许被压缩 */
+}
+
+/* 文字：尽量在右边，占剩余空间 */
+.text {
+  flex: 1;
+  min-width: 260px;   /* 太窄就会换行到下面 */
+  max-width: 520px;
+}
+
+.text p {
+  opacity: 0.85;
+}
+
+/* 不稳定区域：虚线框 */
+.unstable {
+  border-style: dashed;
+}
+
+.footer {
+  text-align: center;
+  padding: 40px;
+  font-size: 12px;
+  opacity: 0.85;
+}
